@@ -1,0 +1,39 @@
+package StreamDemo;
+import java.util.Map;
+import java.util.ArrayList;
+import java.util.stream.Collectors;
+public class IdsName {
+    public static ArrayList<EmployeesList> getAllEmployeesIds()
+    {
+        EmployeesList e1=new EmployeesList(101,"SrinuMagam",34162.22,"Male");
+        EmployeesList e2=new EmployeesList(102,"Mamatha",53287.3,"Female");
+        EmployeesList e3=new EmployeesList(103,"Srikanth",26172.28,"Male");
+        EmployeesList e4=new EmployeesList(104,"Pravallika",6287.21,"Female");
+        EmployeesList e5=new EmployeesList(105,"Raja",628.22,"male");
+        EmployeesList e6=new EmployeesList(110,"Sumaltha",71283.27,"Female");
+        EmployeesList e7=new EmployeesList(111,"MahendraReddy",24512.37,"Male");
+        EmployeesList e8=new EmployeesList(112,"priya",52561.35,"Female");
+        EmployeesList e9=new EmployeesList(113,"Lakshmi",726.3,"Female");
+        EmployeesList e10=new EmployeesList(114,"Sri",523.00,"Female");
+        ArrayList<EmployeesList> f=new ArrayList<>();
+        f.add(e1);
+        f.add(e2);
+        f.add(e3);
+        f.add(e4);
+        f.add(e5);
+        f.add(e6);
+        f.add(e7);
+        f.add(e8);
+        f.add(e9);
+        f.add(e10);
+        return f;
+    }
+    public static void main(String[] args)
+    {
+        Map<Integer,String> allEmployees=getAllEmployeesIds()
+        .stream()
+        .collect(Collectors.toMap(e->e.getEid(),e->e.getName()));
+        System.out.println(allEmployees);
+    }
+}
+
